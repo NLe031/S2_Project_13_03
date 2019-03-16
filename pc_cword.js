@@ -7,8 +7,8 @@
 
    Crossword Puzzle Script
    
-   Author: 
-   Date:   
+   Author: Nicholas Le
+   Date: 03/15/19  
    
    Global Variables
    ================
@@ -53,7 +53,7 @@
 
 
 
-   
+
 
 
 
@@ -62,5 +62,5 @@
 /*====================================================*/
 
 function getChar(keyNum) {
-   return String.fromCharCode(keyNum);
+      return String.fromCharCode(keyNum);
 }
