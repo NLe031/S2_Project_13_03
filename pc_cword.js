@@ -48,6 +48,45 @@
 
 
 */
+//Global Variables
+var allLetters;
+var currentLetter;
+var wordLetters;
+var acrossClue;
+var downClue;
+var typeDirection;
+
+window.onload = init;
+
+// sets up the initial conditions of the puzzle.
+function init() {
+      allLetters = document.querySelector("table#crossword span");
+      currentLetter = allLetters[0];
+      var acrossID = currentLetter.dataset.clueA;
+      var downID = currentLetter.dataset.clueD;
+      acrossClue = document.getElementById("across");
+      downClue = document.getElementById("down");
+
+}
+// function will format the colors of the crossword table cells and the clues
+function formatPuzzle(puzzleLetter) {
+      currentLetter = puzzleLetter;
+      for (var i = 0; i <= allLetters.length; i++) {
+            allLetters[i].style.backgroundColor = "";
+            acrossClue = currentLetter.dataset.clueA;
+            acrossClue.style.color = "blue";
+            wordLetters = document.querySelectorAll("currentLetter.dataset.clueA");
+            wordLetters.style.backgroundColor = "rgb(231, 231, 255)";
+      }
+
+      for (var i = 0; i <= allLetters.length; i++) {
+            allLetters[i].style.backgroundColor = "";
+            downClue = currentLetter.dataset.clueD;
+            downClue.style.color = "red";
+            wordLetters = document.querySelectorAll("currentLetter.dataset.clueD");
+            wordLetters.style.backgroundColor = "rgb(255, 231, 231)";
+      }
+}
 
 
 
