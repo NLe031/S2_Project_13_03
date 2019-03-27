@@ -113,16 +113,12 @@ function formatPuzzle(puzzleLetter) {
             acrossClue = document.getElementById(currentLetter.dataset.clueA);
             acrossClue.style.color = "blue";
             wordLetters = document.querySelectorAll("[data-clue-a = " + currentLetter.dataset.clueA + "]");
-
             for (var i = 0; i < wordLetters.length; i++) {
                   wordLetters[i].style.backgroundColor = "rgb(231, 231, 255)";
             }
 
       }
 
-      for (var i = 0; i < allLetters.length; i++) {
-            allLetters[i].style.backgroundColor = "";
-      }
       if (currentLetter.dataset.clueD !== undefined) {
             downClue = document.getElementById(currentLetter.dataset.clueD);
             downClue.style.color = "red";
@@ -161,8 +157,14 @@ function selectLetter(e) {
             currentLetter = "";
       } else if (userKey == 32) {
             switchTypeDirection();
+      } else if (65 < userKey > 90) {
+            currentLetter = getChar(userKey);
+      } else if (typeDirection == "right") {
+            formatPuzzle(rightLetter);
+      } else {
+            formatPuzzle(downLetter);
       }
-
+      preventDefault(KeyboardEvent);
 }
 
 function switchTypeDirection() {
